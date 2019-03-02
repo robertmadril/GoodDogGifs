@@ -80,6 +80,5 @@ $(document).on("click", ".topic", apiCall);
 
 /*
 To-Do
-User can add free text search and button will be added/move on to display
-If user clicks on the same gif, animation will stop.
+Styling
 */
