@@ -6,7 +6,6 @@ var topics = ["Hamburgers", "Pizza", "Mac and Cheese", "Pasta", "Tacos", "More F
 Pseudocode:
 
 User can add free text search and button will be added/move on to display
-When user clicks on button, that button topic will call to the GIF API with specific topic, amount
 Returned GIF API call will append 10 relevant gif's to gif-container, all static.
 If user clicks on gif's, they will animate.
 If user clicks on another gif or the same gif, animation will stop.
@@ -24,4 +23,18 @@ function renderButtons() {
     }
 }
 
+function apiCall() {
+    var topic = $(this).attr("data-value");
+    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=wD9RCoqUkLgKpp0XRh2N0rvmJLXRvSZ9&limit=10";
+
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+      }).then(function(response) {
+        console.log(response);
+
+      }); 
+}
+
 renderButtons();
+$(document).on("click", ".topic", apiCall);
