@@ -1,4 +1,4 @@
-var topics = ["Hamburgers", "Pizza", "Mac and Cheese", "Pasta", "Tacos", "More Food Here"]
+var topics = ["Hamburgers", "Pizza", "Mac and Cheese", "Pasta", "Tacos"]
 
 function renderButtons() {
     for (i=0; i<topics.length; i++) {
@@ -45,6 +45,20 @@ function animate() {
   })
 }
 
+function inputBtn() {
+  
+  $("#add-food").on("click", function(event) {
+
+    event.preventDefault();
+
+    $("#btn-container").empty();
+    var food = $("#food-input").val().trim();
+    topics.push(food);
+    renderButtons();
+    console.log("works");
+  })
+}
+
 
 function apiCall() {
     var topic = $(this).attr("data-value");
@@ -61,6 +75,7 @@ function apiCall() {
 }
 
 renderButtons();
+inputBtn();
 $(document).on("click", ".topic", apiCall);
 
 /*
