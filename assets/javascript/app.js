@@ -19,6 +19,7 @@ function renderGif(r) {
       newImg.attr("src", stillUrl);
       newImg.attr("data-gif", r.data[i].images.fixed_height_small.url);
       newImg.attr("data-still", stillUrl);
+      newImg.attr("data-state", "still");
       newImg.addClass("gif");
       newDiv.append(newImg);
       newDiv.append("<p>Rating: " + r.data[i].rating + "</p>");
@@ -28,8 +29,19 @@ function renderGif(r) {
 
 function animate() {
   $(".gif").on("click", function(r) {
+
+    var state = $(this).attr("data-state");
+
+    if (state === "still") {
     var gif = $(this).attr("data-gif");
     $(this).attr("src", gif);
+    $(this).attr("data-state", "animate");
+    }
+    else {
+      var still = $(this).attr("data-still");
+      $(this).attr("src", still);
+      $(this).attr("data-state", "still");
+    }
   })
 }
 
@@ -54,5 +66,5 @@ $(document).on("click", ".topic", apiCall);
 /*
 To-Do
 User can add free text search and button will be added/move on to display
-If user clicks on another gif or the same gif, animation will stop.
+If user clicks on the same gif, animation will stop.
 */
