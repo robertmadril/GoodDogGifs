@@ -1,18 +1,5 @@
 var topics = ["Hamburgers", "Pizza", "Mac and Cheese", "Pasta", "Tacos", "More Food Here"]
 
-
-/*
-
-Pseudocode:
-
-User can add free text search and button will be added/move on to display
-Returned GIF API call will append 10 relevant gif's to gif-container, all static.
-If user clicks on gif's, they will animate.
-If user clicks on another gif or the same gif, animation will stop.
-User clicks new button or searches and 10 new gifs will appear in gif-container.
-
-*/
-
 function renderButtons() {
     for (i=0; i<topics.length; i++) {
         var newBtn = $("<button>")
@@ -24,17 +11,28 @@ function renderButtons() {
 }
 
 function renderGif(r) {
+    $("#gif-container").empty();
     for (i=0; i<r.data.length; i++) {
       var newDiv = $("<div>");
       var stillUrl = r.data[i].images.fixed_height_small_still.url;
       var newImg = $("<img>");
       newImg.attr("src", stillUrl);
-      newDiv.addClass("gif");
+      newImg.attr("data-gif", r.data[i].images.fixed_height_small.url);
+      newImg.attr("data-still", stillUrl);
+      newImg.addClass("gif");
       newDiv.append(newImg);
       newDiv.append("<p>Rating: " + r.data[i].rating + "</p>");
       $("#gif-container").append(newDiv);
     }
 }
+
+function animate() {
+  $(".gif").on("click", function(r) {
+    var gif = $(this).attr("data-gif");
+    $(this).attr("src", gif);
+  })
+}
+
 
 function apiCall() {
     var topic = $(this).attr("data-value");
@@ -46,8 +44,15 @@ function apiCall() {
       }).then(function(response) {
         console.log(response);
         renderGif(response);
+        animate(response);
       }); 
 }
 
 renderButtons();
 $(document).on("click", ".topic", apiCall);
+
+/*
+To-Do
+User can add free text search and button will be added/move on to display
+If user clicks on another gif or the same gif, animation will stop.
+*/
