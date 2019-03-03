@@ -1,5 +1,5 @@
 
-var topics = ["Golden Retriever", "Pug", "Australian Shepard", "Yellow Lab", "Chocolate Lab", "Irish Setter", "German Shepard", "Chihuahua", "Shih Tzu", "Greyhound", "Cocker Spaniel", "Labradoodle"]
+var topics = ["Golden Retriever", "Pug", "Australian Shepherd", "Yellow Lab", "Chocolate Lab", "German Shepherd", "Chihuahua", "Shih Tzu", "Greyhound", "Cocker Spaniel", "Labradoodle", "St Bernard"]
 
 function renderButtons() {
     for (i=0; i<topics.length; i++) {
