@@ -1,5 +1,55 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#title {
+    text-align: center;
+    font-size: 48px;
+    font-family: 'Patrick Hand SC', cursive;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #3E96D1;
+    color: #F6F5F1;
+}
+
+#title h2 {
+    font-family: 'Patrick Hand SC', cursive;
+    font-size: 36px;
+}
+
 #btn-container {
     width: 100%;
+    height: auto;
+    background-color: #EE723F;
+}
+
+button {
+    color: #494949 ;
+    text-transform: uppercase;
+    background: #ffffff;
+    padding: 10px;
+    border: 2px solid #494949;
+    border-radius: 6px;
+    display: inline-block;
+    margin-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    cursor: pointer;
+    color: #ffffff;
+    background: #3E96D1;
+    border-color: #3E96D1;
+    transition: all 0.4s ease 0s;
+}
+
+button:focus {
+    color: #ffffff;
+    background: #3E96D1;
+    border-color: #3E96D1;
+    outline: none;
 }
 
 #gif-container {
@@ -10,10 +60,52 @@
 #search-container {
     width: 20%;
     float:right;
+    text-align: center;
+    margin-top: 15px;
+}
+
+#form-container {
+    font-size: 16px;
+    text-transform: uppercase;
+    font-family: 'Patrick Hand SC', cursive;
+}
+
+#dog-input {
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+#add-dog {
+    color: #494949 ;
+    text-transform: uppercase;
+    background: #ffffff;
+    padding: 5px;
+    border: 2px solid #494949;
+    border-radius: 6px;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 12px;
+}
+
+#add-dog:hover {
+    cursor: pointer;
+    color: #ffffff;
+    background: #EE723F;
+    border-color: #EE723F;
+    transition: all 0.4s ease 0s;
 }
 
 .gif-con {
     float: left;
     margin-left: 10px;
     margin-right: 10px;
+}
+
+p {
+    font-size: 18px;
+    margin-bottom: 5px;
+    margin-top: 15px;
+
 }

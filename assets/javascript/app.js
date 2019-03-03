@@ -1,4 +1,5 @@
-var topics = ["Hamburgers", "Pizza", "Mac and Cheese", "Pasta", "Tacos"]
+
+var topics = ["Golden Retriever", "Pug", "Australian Shepard", "Yellow Lab", "Chocolate Lab", "Irish Setter", "German Shepard", "Chihuahua", "Shih Tzu", "Greyhound", "Cocker Spaniel", "Labradoodle"]
 
 function renderButtons() {
     for (i=0; i<topics.length; i++) {
@@ -48,13 +49,13 @@ function animate() {
 
 function inputBtn() {
   
-  $("#add-food").on("click", function(event) {
+  $("#add-dog").on("click", function(event) {
 
     event.preventDefault();
 
     $("#btn-container").empty();
-    var food = $("#food-input").val().trim();
-    topics.push(food);
+    var dogs = $("#dog-input").val().trim();
+    topics.push(dogs);
     renderButtons();
   })
 }
