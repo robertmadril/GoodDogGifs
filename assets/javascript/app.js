@@ -63,7 +63,7 @@ function inputBtn() {
 
 function apiCall() {
     var topic = $(this).attr("data-value");
-    var queryURL = "http://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=wD9RCoqUkLgKpp0XRh2N0rvmJLXRvSZ9&limit=10";
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + topic + "&api_key=wD9RCoqUkLgKpp0XRh2N0rvmJLXRvSZ9&limit=10";
 
     $.ajax({
         url: queryURL,
