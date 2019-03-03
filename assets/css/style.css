@@ -1,0 +1,19 @@
+#btn-container {
+    width: 100%;
+}
+
+#gif-container {
+    width: 80%;
+    float: left;
+}
+
+#search-container {
+    width: 20%;
+    float:right;
+}
+
+.gif-con {
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}

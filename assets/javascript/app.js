@@ -14,15 +14,16 @@ function renderGif(r) {
     $("#gif-container").empty();
     for (i=0; i<r.data.length; i++) {
       var newDiv = $("<div>");
-      var stillUrl = r.data[i].images.fixed_height_small_still.url;
+      var stillUrl = r.data[i].images.fixed_height_still.url;
       var newImg = $("<img>");
       newImg.attr("src", stillUrl);
-      newImg.attr("data-gif", r.data[i].images.fixed_height_small.url);
+      newImg.attr("data-gif", r.data[i].images.fixed_height.url);
       newImg.attr("data-still", stillUrl);
       newImg.attr("data-state", "still");
       newImg.addClass("gif");
-      newDiv.append(newImg);
       newDiv.append("<p>Rating: " + r.data[i].rating + "</p>");
+      newDiv.append(newImg);
+      newDiv.addClass("gif-con");
       $("#gif-container").append(newDiv);
     }
 }
@@ -55,7 +56,6 @@ function inputBtn() {
     var food = $("#food-input").val().trim();
     topics.push(food);
     renderButtons();
-    console.log("works");
   })
 }
 
